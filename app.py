@@ -49,11 +49,11 @@ def login_doctor():
         if user:
             session['loggedin'] = True
             session['id'] = user['id']
-            session['email'] = user['Email']
-            return jsonify('logged in')
+            session['email'] = user['email']
+            return jsonify('Logged in successfully!')
         else:
-            return jsonify('Invalid Username or Password')
-    return "logged in"
+            return jsonify('Incorrect username/password!')
+    return "logged in successfully!"
 @app.route("/logout")
 def logout_doctor():
     session.clear()
